@@ -26,7 +26,7 @@ contract DOLAToken is ERC20, Ownable(msg.sender){
         // Transfer BDOLA from the user to the contract
         collateralToken.transferToken(msg.sender, address(this), _collateralAmount);
 
-        uint256 dolaToMint = (_collateralAmount* pegToken.getPegValue()) / collateralizationRatio;
+        uint256 dolaToMint = (_collateralAmount* getPegValue()) / collateralizationRatio;
         _mint(msg.sender, dolaToMint * (10 ** uint256(decimals())));
 
     }
@@ -39,7 +39,7 @@ contract DOLAToken is ERC20, Ownable(msg.sender){
         _burn(msg.sender, _dolaAmount* (10 ** uint256(decimals())));
 
         // Calculate collateral to return
-        uint256 collateralToReturn = (_dolaAmount * collateralizationRatio) / pegToken.getPegValue();
+        uint256 collateralToReturn = (_dolaAmount * collateralizationRatio) / getPegValue();
         require(collateralToken.balanceOf(address(this)) >= collateralToReturn, "Insufficient collateral in contract");
 
         // Transfer BDOLA back to the user
