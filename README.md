@@ -141,3 +141,9 @@ function BuyToken(uint _amount) public
 function transferToken(address from, address to, uint amount) public
 ```
   - Calls the internal `_transfer` function provided by the `ERC20` contract to move `amount` tokens (scaled up by the token's decimal places) from `from` to `to`.
+
+### Verified contract links on ETHERSCAN
+
+1. BDOLA Token : https://holesky.etherscan.io/address/0x1995979b4e28901354a1c506aee45de3374aa48e
+2. ROI Token: https://holesky.etherscan.io/address/0x3BaF173791830A3CDfA38Ef753820F4699E9E99D
+3. DOLA Token (Main Contract): https://holesky.etherscan.io/address/0x769532142a954878401423d593DA53839BFE9123
